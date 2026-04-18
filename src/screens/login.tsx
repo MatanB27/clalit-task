@@ -70,10 +70,7 @@ export const Login = () => {
   };
 
   return (
-    <ScreenContainer
-      title="התחברות"
-      subtitle="יש להזין שם משתמש וסיסמה. כל שילוב תקין יאפשר כניסה לאפליקציה."
-    >
+    <ScreenContainer title="התחברות" subtitle="יש להזין שם משתמש וסיסמא">
       <View style={styles.form}>
         <Input
           autoCapitalize="none"
