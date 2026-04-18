@@ -35,8 +35,6 @@ export const useAuthStore = create<AuthStore>((set) => ({
       await clearAuthStorage();
       await removeActiveAppointment();
 
-      useAppointmentStore.getState().resetAppointmentState();
-
       set({
         isInitialized: true,
         isAuthenticated: false,
