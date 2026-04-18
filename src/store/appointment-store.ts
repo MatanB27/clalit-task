@@ -58,6 +58,7 @@ export const useAppointmentStore = create<AppointmentStore>((set) => ({
 
     set({
       activeAppointment: appointment,
+      selectedSpecialtyId: null,
       selectedSlot: null,
       bookingMode: "create",
     });
@@ -67,6 +68,7 @@ export const useAppointmentStore = create<AppointmentStore>((set) => ({
 
     set({
       activeAppointment: null,
+      selectedSpecialtyId: null,
       selectedSlot: null,
       bookingMode: "create",
     });
