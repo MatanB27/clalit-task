@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import { RootNavigator } from "./navigator";
 import { useAuthStore } from "./store/auth-store";
 import { useAppointmentStore } from "./store/appointment-store";
 
 export default function App() {
   const isAuthInitialized = useAuthStore((state) => state.isInitialized);
-  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   const initializeAuth = useAuthStore((state) => state.initializeAuth);
 
   const isAppointmentInitialized = useAppointmentStore(
@@ -34,7 +33,8 @@ export default function App() {
         <RootNavigator />
       ) : (
         <View style={styles.container}>
-          <Text style={styles.title}>Loading app...</Text>
+          <ActivityIndicator color="#0f6cbd" size="large" />
+          <Text style={styles.title}>טוען...</Text>
         </View>
       )}
       <StatusBar style="auto" />
@@ -48,9 +48,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#fff",
+    gap: 16,
   },
   title: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "600",
+    color: "#1b1f29",
+    textAlign: "right",
+    writingDirection: "rtl",
   },
 });
