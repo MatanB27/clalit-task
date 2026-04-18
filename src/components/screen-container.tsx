@@ -41,12 +41,16 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "700",
     color: "#1b1f29",
+    textAlign: "right",
+    writingDirection: "rtl",
   },
   subtitle: {
     marginTop: 8,
     fontSize: 16,
     lineHeight: 22,
     color: "#5b6475",
+    textAlign: "right",
+    writingDirection: "rtl",
   },
   body: {
     flex: 1,

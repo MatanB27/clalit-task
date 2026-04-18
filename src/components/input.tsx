@@ -37,6 +37,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: '#1b1f29',
+    textAlign: 'right',
+    writingDirection: 'rtl',
   },
   input: {
     minHeight: 52,
@@ -47,6 +49,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#1b1f29',
     backgroundColor: '#ffffff',
+    textAlign: 'right',
+    writingDirection: 'rtl',
   },
   inputError: {
     borderColor: '#c63d2f',
@@ -54,5 +58,7 @@ const styles = StyleSheet.create({
   error: {
     fontSize: 13,
     color: '#c63d2f',
+    textAlign: 'right',
+    writingDirection: 'rtl',
   },
 });
