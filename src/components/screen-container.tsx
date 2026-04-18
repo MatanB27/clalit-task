@@ -2,11 +2,12 @@ import type { PropsWithChildren, ReactNode } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-type ScreenContainerProps = PropsWithChildren<{
+interface ScreenContainerProps {
+  children: React.ReactNode;
   title?: string;
   subtitle?: string;
   footer?: ReactNode;
-}>;
+}
 
 export const ScreenContainer = ({
   children,
