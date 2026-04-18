@@ -8,7 +8,7 @@ import {
   type NativeStackNavigationProp,
 } from "@react-navigation/native-stack";
 
-import { Button } from "./components/button";
+import { TransparentButton } from "./components/buttons/transparent-button";
 import { ROUTES } from "./constants/routes";
 import { Calendar } from "./screens/calendar";
 import { Home } from "./screens/home";
@@ -65,9 +65,9 @@ export const RootNavigator = () => {
               options={{
                 title: getTitle(ROUTES.HOME),
                 headerLeft: () => (
-                  <Button onPress={logout} variant="header">
+                  <TransparentButton onPress={logout}>
                     התנתקות
-                  </Button>
+                  </TransparentButton>
                 ),
               }}
             />

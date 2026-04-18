@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 
-import { Button } from "../components/button";
+import { Button } from "../components/buttons/button";
 import { Input } from "../components/input";
 import { ScreenContainer } from "../components/screen-container";
 import { useAuthStore } from "../store/auth-store";

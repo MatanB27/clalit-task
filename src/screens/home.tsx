@@ -1,9 +1,9 @@
 import { Alert, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { Button } from '../components/button';
+import { BorderButton } from '../components/buttons/border-button';
+import { Button } from '../components/buttons/button';
 import { ScreenContainer } from '../components/screen-container';
-import { SpecialtyOption } from '../components/specialty-option';
 import { ROUTES } from '../constants/routes';
 import { SPECIALTIES } from '../data/appointments';
 import type { RootNavigationProp } from '../navigator';
@@ -89,12 +89,13 @@ export const Home = () => {
         <View style={styles.selectionList}>
           {SPECIALTIES.map((specialty) => {
             return (
-              <SpecialtyOption
+              <BorderButton
                 key={specialty.id}
-                isSelected={specialty.id === selectedSpecialtyId}
                 onPress={() => selectSpecialty(specialty.id)}
-                specialty={specialty}
-              />
+                selected={specialty.id === selectedSpecialtyId}
+              >
+                {specialty.label}
+              </BorderButton>
             );
           })}
         </View>
