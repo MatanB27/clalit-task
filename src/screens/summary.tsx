@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export const SummaryScreen = () => {
+export const Summary = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Summary Screen</Text>
+      <Text style={styles.title}>Summary</Text>
     </View>
   );
 };

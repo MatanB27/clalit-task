@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export const CalendarScreen = () => {
+export const Calendar = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Calendar Screen</Text>
+      <Text style={styles.title}>Calendar</Text>
     </View>
   );
 };

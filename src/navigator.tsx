@@ -1,12 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import { ROUTES } from './constants/routes';
+import { Calendar } from './screens/calendar';
+import { Home } from './screens/home';
+import { Login } from './screens/login';
+import { Summary } from './screens/summary';
 import { useAuthStore } from './store/auth-store';
-import { CalendarScreen } from './screens/calendar-screen';
-import { HomeScreen } from './screens/home-screen';
-import { LoginScreen } from './screens/login-screen';
-import { SummaryScreen } from './screens/summary-screen';
 
 type RootStackParamList = {
   Login: undefined;
@@ -25,12 +24,12 @@ export const RootNavigator = () => {
       <Stack.Navigator>
         {isAuthenticated ? (
           <>
-            <Stack.Screen name={ROUTES.HOME} component={HomeScreen} />
-            <Stack.Screen name={ROUTES.CALENDAR} component={CalendarScreen} />
-            <Stack.Screen name={ROUTES.SUMMARY} component={SummaryScreen} />
+            <Stack.Screen name={ROUTES.HOME} component={Home} />
+            <Stack.Screen name={ROUTES.CALENDAR} component={Calendar} />
+            <Stack.Screen name={ROUTES.SUMMARY} component={Summary} />
           </>
         ) : (
-          <Stack.Screen name={ROUTES.LOGIN} component={LoginScreen} />
+          <Stack.Screen name={ROUTES.LOGIN} component={Login} />
         )}
       </Stack.Navigator>
     </NavigationContainer>
