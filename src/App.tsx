@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { useAuthStore } from './store/auth-store';
-import { useAppointmentStore } from './store/appointment-store';
+import { useEffect } from "react";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { RootNavigator } from "./navigator";
+import { useAuthStore } from "./store/auth-store";
+import { useAppointmentStore } from "./store/appointment-store";
 
 export default function App() {
   const isAuthInitialized = useAuthStore((state) => state.isInitialized);
@@ -28,28 +29,28 @@ export default function App() {
   const isAppInitialized = isAuthInitialized && isAppointmentInitialized;
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>
-        {isAppInitialized
-          ? isAuthenticated
-            ? 'Session restored'
-            : 'Ready for login'
-          : 'Loading app...'}
-      </Text>
+    <>
+      {isAppInitialized ? (
+        <RootNavigator />
+      ) : (
+        <View style={styles.container}>
+          <Text style={styles.title}>Loading app...</Text>
+        </View>
+      )}
       <StatusBar style="auto" />
-    </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#fff",
   },
   title: {
     fontSize: 24,
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });
